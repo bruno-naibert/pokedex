@@ -1,0 +1,76 @@
+<div class="sheet-img">
+  <img [src]="pokemon.sprites?.front_default" [alt]="pokemon.name">
+</div>
+
+<mat-tab-group class="sheet">
+  <mat-tab label="About">
+    <div class="sheet-tab">
+      <div class="sheet-item">
+        <div class="color-gray sheet-item_label">Height: </div>
+        <div class="color-gray sheet-item_label">Weight: </div>
+        <div class="color-gray sheet-item_label">Abilities: </div>
+      </div>
+      <div class="sheet-item">
+        <div>{{pokemon.height}}</div>
+        <div>{{pokemon.weight}}</div>
+        <div>{{getAbilities()}}</div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Base Stats">
+    <div class="sheet-tab">
+      <div class="sheet-item w-100">
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">HP:</div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[5].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">Attack: </div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[4].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">Defense:</div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[3].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">Sp. Attack:</div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[2].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">Sp. Defense:</div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[1].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+        <div class="sheet-progress w-100">
+          <div class="w-20 color-gray sheet-item_label">Speed:</div>
+          <div class="w-80">
+            <app-progress-bar [color]="getPrincipalType(pokemon.types)" [value]="pokemon.stats[0].base_stat">
+            </app-progress-bar>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
